@@ -90,8 +90,9 @@ async function run() {
         }
         await logTimeAndScreenshot("sell");
         
-        
-        await page.locator('.closeButton-ZZzgDlel').click();
+        await page.reload();
+        await page.waitForTimeout(5000);
+        // await page.locator('.closeButton-ZZzgDlel').click();
       } else if (buyTextElement) {
         console.log("Detected action: buy");
         try {
@@ -109,8 +110,9 @@ async function run() {
           console.error("Error extracting text or updating JSON:", error);
         }
         await logTimeAndScreenshot("buy");
-        
-        await page.locator('.closeButton-ZZzgDlel').click();
+        await page.reload();
+         await page.waitForTimeout(5000);
+        // await page.locator('.closeButton-ZZzgDlel').click();
       } else {
         console.log("No matching text element found. Checking again...");
       }
