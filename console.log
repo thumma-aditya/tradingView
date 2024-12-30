@@ -1,0 +1,67 @@
+
+[2mRunning [22m1[2m test using [22m1[2m worker[22m 
+undefined 
+Home page visible  
+[33m  1 did not run[39m 
+
+[2mRunning [22m1[2m test using [22m1[2m worker[22m 
+undefined 
+Home page visible  
+ 
+[31m  1) example.spec.js:48:1 › Monitor trading actions and log results [2m────────────────────────────────[22m[39m
+
+    Error: page.click: Target page, context or browser has been closed
+    Call log:
+    [2m  - waiting for locator('span:text(\'ETHUSD\')')[22m
+    [2m    - locator resolved to 2 elements. Proceeding with the first one: <span data-overflow-tooltip-text="ETHUSD" class="title-QcLQh3GA apply-overflow-tooltip">ETHUSD</span>[22m
+    [2m  - attempting click action[22m
+    [2m    - waiting for element to be visible, enabled and stable[22m
+    [2m    - element is visible, enabled and stable[22m
+    [2m    - scrolling into view if needed[22m
+    [2m    - done scrolling[22m
+    [2m    - <video loop="" autoplay="" playsinline="" class="video-Ys0wuIMy" disableremoteplayback="" poster="https://static.tradingview.com/static/bundles/desktop.48bb0acc31aeb2422416.webp">…</video> from <div>…</div> subtree intercepts pointer events[22m
+    [2m  - retrying click action[22m
+    [2m    - waiting for element to be visible, enabled and stable[22m
+    [2m    - element is not stable[22m
+    [2m  - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    - waiting for element to be visible, enabled and stable[22m
+    [2m  - element was detached from the DOM, retrying[22m
+    [2m    - locator resolved to 2 elements. Proceeding with the first one: <span data-overflow-tooltip-text="ETHUSD" class="title-QcLQh3GA apply-overflow-tooltip">ETHUSD</span>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is visible, enabled and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <video loop="" autoplay="" playsinline="" class="video-Ys0wuIMy" disableremoteplayback="" poster="https://static.tradingview.com/static/bundles/desktop.48bb0acc31aeb2422416.webp">…</video> from <div>…</div> subtree intercepts pointer events[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is visible, enabled and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <video loop="" autoplay="" playsinline="" class="video-Ys0wuIMy" disableremoteplayback="" poster="https://static.tradingview.com/static/bundles/desktop.48bb0acc31aeb2422416.webp">…</video> from <div>…</div> subtree intercepts pointer events[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    4 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is visible, enabled and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <video loop="" autoplay="" playsinline="" class="video-Ys0wuIMy" disableremoteplayback="" poster="https://static.tradingview.com/static/bundles/desktop.48bb0acc31aeb2422416.webp">…</video> from <div>…</div> subtree intercepts pointer events[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 500ms[22m
+
+
+    [0m [90m 64 |[39m
+     [90m 65 |[39m   [90m// Navigate to the chart[39m
+    [31m[1m>[22m[39m[90m 66 |[39m   [36mawait[39m page[33m.[39mclick([32m"span:text('ETHUSD')"[39m)[33m;[39m
+     [90m    |[39m              [31m[1m^[22m[39m
+     [90m 67 |[39m   [36mawait[39m page[33m.[39mwaitForTimeout([35m10000[39m)[33m;[39m
+     [90m 68 |[39m
+     [90m 69 |[39m   [36mconst[39m [newPage] [33m=[39m [36mawait[39m [33mPromise[39m[33m.[39mall([[0m
+    [2m    at /Users/adityathumma/Desktop/git/tradingView/example.spec.js:66:14[22m
+ 
+[33m  Slow test file: [39mexample.spec.js[33m (16.8s)[39m 
+[33m  Consider splitting slow test files to speed up parallel execution[39m 
+[31m  1 failed[39m
+[31m    example.spec.js:48:1 › Monitor trading actions and log results [2m─────────────────────────────────[22m[39m 
