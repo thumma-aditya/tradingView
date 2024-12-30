@@ -51,7 +51,7 @@ async function logTimeAndScreenshot(page, action) {
 }
 
 test('Monitor trading actions and log results', async ({ page }) => {
-  test.setTimeout(0); // Disable timeout for the test
+  test.setTimeout(20000);// Disable timeout for the test
   try {
     // Step 1: Login and navigate to the chart
     await page.goto('https://www.tradingview.com/');
@@ -77,7 +77,7 @@ test('Monitor trading actions and log results', async ({ page }) => {
 
     await newPage.waitForLoadState('domcontentloaded');
     console.log("Monitoring started on the new page");
-
+    newPage.setDefaultTimeout(0);
     while (true) {
       const sellTextElement = await newPage.$(`text="UT BOT Sell"`);
       const buyTextElement = await newPage.$(`text="UT BOT Buy"`);
