@@ -51,23 +51,30 @@ async function logTimeAndScreenshot(page, action) {
 }
 
 test('Monitor trading actions and log results', async ({ page }) => {
-  test.setTimeout(20000);// Disable timeout for the test
+  test.setTimeout(60000);// Disable timeout for the test
   try {
     // Step 1: Login and navigate to the chart
-    await page.goto('https://www.tradingview.com/');
+    await page.goto('https://www.tradingview.com/', { timeout: 60000 }); // Timeout increased to 60 seconds
+    console.log(`await page.goto('https://www.tradingview.com/', { timeout: 60000 });`);
+    
     await page.click("button[aria-label='Open user menu']");
     await page.waitForTimeout(2000);
     await page.getByText('Sign in', { exact: true }).click();
+    console.log(`Sign in 1st`);
+    
 
     await page.getByRole('button', { name: 'Email' }).click();
     await page.fill('#id_username', 'abc@gmail.com');
     await page.fill('#id_password', '123a');
     await page.getByText('Sign in', { exact: true }).click();
+    console.log(`Sign in 2nd`);
+    
     await page.waitForTimeout(10000);
     console.log(`Home page visible`);
 
     // Navigate to the chart
     await page.click("span:text('ETHUSD')");
+    console.log(`await page.click("span:text('ETHUSD')");`);
     await page.waitForTimeout(10000);
 
     const [newPage] = await Promise.all([
