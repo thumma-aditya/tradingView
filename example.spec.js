@@ -71,6 +71,7 @@ test('Monitor trading actions and log results', async ({ page }) => {
     
     await page.waitForTimeout(10000);
     console.log(`Home page visible`);
+    await logTimeAndScreenshot(page, 'homePage');
 
     // Navigate to the chart
     await page.click("span:text('ETHUSD')");
@@ -84,6 +85,7 @@ test('Monitor trading actions and log results', async ({ page }) => {
 
     await newPage.waitForLoadState('domcontentloaded');
     console.log("Monitoring started on the new page");
+    await logTimeAndScreenshot(newPage, 'domcontentloaded');
     newPage.setDefaultTimeout(0);
     while (true) {
       const sellTextElement = await newPage.$(`text="UT BOT Sell"`);
