@@ -2,7 +2,7 @@ import { chromium } from 'playwright';
 import * as fs from 'fs';
 
 async function run() {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext();
   const page = await context.newPage();
 
@@ -90,9 +90,8 @@ async function run() {
         }
         await logTimeAndScreenshot("sell");
         
-        await page.reload();
-        await page.waitForTimeout(5000);
-        // await page.locator('.closeButton-ZZzgDlel').click();
+        
+        await page.locator('.closeButton-ZZzgDlel').click();
       } else if (buyTextElement) {
         console.log("Detected action: buy");
         try {
@@ -110,9 +109,8 @@ async function run() {
           console.error("Error extracting text or updating JSON:", error);
         }
         await logTimeAndScreenshot("buy");
-        await page.reload();
-         await page.waitForTimeout(5000);
-        // await page.locator('.closeButton-ZZzgDlel').click();
+        
+        await page.locator('.closeButton-ZZzgDlel').click();
       } else {
         console.log("No matching text element found. Checking again...");
       }
