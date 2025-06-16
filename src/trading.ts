@@ -2,18 +2,19 @@ import { chromium } from 'playwright';
 import * as fs from 'fs';
 
 async function run() {
-  const browser = await chromium.launch({ headless: false });
+
+  const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext();
   const page = await context.newPage();
 
   // Step 1: Login and navigate to the chart
-  await page.goto("https://www.tradingview.com/");
-  await page.click("button[aria-label='Open user menu']");
+  await page.goto("https://www.tradingview.com/accounts/signin/");
+  
+  await page.click("//button[@name='Email']")
   await page.waitForTimeout(2000);
-
-  await page.getByRole('button', { name: 'Email' }).click();
-  await page.fill("#id_username", "youremail@gmail.com");
-  await page.fill("#id_password", "yourPassword");
+  await page.fill("#id_username", "adityathumma6@gmail.com");
+  await page.fill("#id_password", "Mounika@1994a");
+  await page.click("//span[text()='Sign in']")
   await page.waitForTimeout(10000);
 
   // Navigate to the chart and wait for a new page (tab) to open

@@ -1,6 +1,7 @@
 {
   "name": "robinhood-playwright",
   "version": "1.0.0",
+   "type": "module", 
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,12 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "playwright": "^1.48.2",
     "tesseract.js": "^2.1.5"
   },
   "devDependencies": {
+    "@playwright/test": "^1.48.2",
     "@types/node": "^22.9.0",
-    "typescript": "^5.6.3",
-    "@playwright/test": "^1.48.2"
+    "playwright": "^1.53.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
