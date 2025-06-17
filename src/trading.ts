@@ -12,8 +12,8 @@ async function run() {
   
   await page.click("//button[@name='Email']")
   await page.waitForTimeout(2000);
-  await page.fill("#id_username", "adityathumma6@gmail.com");
-  await page.fill("#id_password", "Mounika@1994a");
+  await page.fill("#id_username", "adityat@gmail.com");
+  await page.fill("#id_password", "Mou94a");
   await page.click("//span[text()='Sign in']")
   await page.waitForTimeout(10000);
 
